@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @program.id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @program.name %>
+</p>
+
+<p>
+  <strong>Punch_card:</strong>
+  <%= @program.punch_card %>
+</p>
+
+<p>
+  <strong>Free_punch_new:</strong>
+  <%= @program.free_punch_new %>
+</p>
+
+<p>
+  <strong>Free_punch_profile:</strong>
+  <%= @program.free_punch_profile %>
+</p>
+
+<p>
+  <strong>Voucher_days:</strong>
+  <%= @program.voucher_days %>
+</p>
+
+<p>
+  <strong>Card_prefix:</strong>
+  <%= @program.card_prefix %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

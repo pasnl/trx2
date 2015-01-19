@@ -1,0 +1,43 @@
+<%= form_for(@program) do |f| %>
+  <% if @program.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@program.errors.count, "error") %> prohibited this program from being saved:</h2>
+
+      <ul>
+      <% @program.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+    <div class="field">
+      <%= f.label :punch_card %><br>
+      <%= f.number_field :punch_card %>
+    </div>
+
+    <div class="field">
+      <%= f.label :free_punch_new %><br>
+      <%= f.number_field :free_punch_profile %>
+    </div>
+
+    <div class="field">
+      <%= f.label :voucher_days %><br>
+      <%= f.number_field :voucher_days %>
+    </div>
+
+    <div class="field">
+      <%= f.label :card_prefix %><br>
+      <%= f.text_field :card_prefix %>
+    </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Details punch"} %>
+
+
+<p>
+  <strong>ID:</strong>
+  <%= @punch.id %>
+</p>
+
+
+<p>
+  <strong>Punch code:</strong>
+  <%= @punch.punch_code %>
+</p>
+
+<p>
+  <strong>Cash Value:</strong>
+  <%= @punch.cash_value %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @punch.program_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_punch_path(@punch) %> |
+<%= link_to 'Back', punches_path %>

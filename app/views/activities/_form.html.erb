@@ -1,0 +1,58 @@
+<%= form_for(@activity) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% @activity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<!--wie is de gebruiker-->
+    <div class="field ">
+      <%= f.label :user_id %><br>
+      <div class="dropdown">
+        <%= f.collection_select :user_id, User.all, :id, :email, {:include_blank => 'Selecteer kaarthouder'} %>
+      </div>
+    </div>
+
+<!--transactie is dedaan op datum:tijdstip-->
+    <div class="field">
+      <%= f.label :created_at %><br>
+      <%= f.datetime_select :created_at %>
+    </div>
+
+
+<!--wat is het id van de 'voucher' of de 'punch'-->
+  <div class="field ">
+   <%= f.label :tr_activity_id %><br>
+    <%= f.number_field :tr_activity_id %>
+  </div>
+
+<!--wat is het type transactie "Voucher" of "Punch"-->
+    <div class="field">
+      <%= f.label :tr_activity_type %><br>
+      <%= f.text_field :tr_activity_type %>
+    </div>
+
+<!--Is het een 'min' of een 'plus' transactie-->
+    <div class="field">
+      <%= f.label :minplus %><br>
+      <%= f.text_field :minplus %>
+    </div>
+
+<!-- Wat is het bedrag van de transactie  -->
+    <%= f.label :tr_amount %><br>
+    <%= f.text_field :tr_amount %>
+    </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

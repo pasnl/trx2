@@ -1,0 +1,41 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Lijst met activiteiten"} %>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Voucher</th>
+      <th>User</th>
+      <th>Tr date</th>
+      <th>Tr_activity</th>
+      <th>Tr_activity_type</th>
+      <th>Min/Plus</th>
+      <th>Aantal punten</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+    <% @activities.each do |transaction| %>
+      <tr>
+        <td><%= transaction.id %></td>
+        <td><%= transaction.user_id %></td>
+        <td><%= transaction.created_at %></td>
+        <td><%= transaction.tr_activity_id %></td>
+        <td><%= transaction.tr_activity_type %></td>
+        <td><%= transaction.minplus %></td>
+        <td><%= transaction.tr_amount %></td>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= link_to 'Edit', edit_activity_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
+
+<br>
+<%= link_to 'New Activity', new_activity_path %>
+

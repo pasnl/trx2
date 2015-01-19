@@ -1,0 +1,34 @@
+<%= form_for(@punch) do |f| %>
+  <% if @punch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@punch.errors.count, "error") %> prohibited this punch from being saved:</h2>
+
+      <ul>
+      <% @punch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :punch_code %><br>
+    <%= f.text_field :punch_code %>
+  </div>
+
+    <div class="field">
+      <%= f.label :cash_value %><br>
+      <%= f.text_field :cash_value %>
+    </div>
+
+
+  <div class="field">
+    <%= f.label :programma %><br>
+    <%= f.number_field :program_id %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

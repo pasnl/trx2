@@ -1,0 +1,44 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Details activiteit"} %>
+
+
+<p>
+  <strong>Activity:</strong>
+  <%= @activity.id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @activity.user_id %>
+</p>
+
+
+<p>
+  <strong>Type transactie</strong>
+  <%= @activity.tr_activity_type %>
+</p>
+
+<p>
+  <strong>ID van transactie</strong>
+  <%= @activity.tr_activity_id %>
+</p>
+
+
+
+<p>
+  <strong>Tr date:</strong>
+  <%= @activity.created_at %>
+</p>
+
+<p>
+  <strong>Min of Plus:</strong>
+  <%= @activity.minplus %>
+</p>
+
+<p>
+  <strong>Bedrag:</strong>
+  <%= @activity.tr_amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_activity_path(@activity) %> |
+<%= link_to 'Back', activities_path %>

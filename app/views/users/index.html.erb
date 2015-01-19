@@ -1,0 +1,43 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Alle kaarthouders"} %>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Token</th>
+    <th>Device</th>
+    <th>Barcode</th>
+    <th>Geslacht</th>
+    <th>Email</th>
+    <th>Laatste transactie</th>
+    <th>Spaarkaart</th>
+    <th>Totale saldo</th>
+
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.api_key %></td>
+        <td><%= user.device_id %></td>
+        <td><%= user.cardnumber %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.email %></td>
+        <td><%= user.updated_balance_datetime %></td>
+        <td><%= user.balance %></td>
+        <td><%= user.balance_total %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+
+
+

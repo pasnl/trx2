@@ -1,0 +1,40 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Alle users"} %>
+
+<h1>Listing programs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Punch_card</th>
+      <th>Free_punch_new</th>
+      <th>Free_punch_profile</th>
+      <th>Voucher_days</th>
+      <th>Card_prefix</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td><%= program.name %></td>
+        <td><%= program.punch_card %></td>
+        <td><%= program.free_punch_new %></td>
+        <td><%= program.free_punch_profile %></td>
+        <td><%= program.voucher_days %></td>
+        <td><%= program.card_prefix %></td>
+
+
+        <td><%= link_to 'Show', program %></td>
+        <td><%= link_to 'Edit', edit_program_path(program) %></td>
+        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>

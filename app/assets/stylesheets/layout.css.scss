@@ -1,0 +1,59 @@
+@import "compass";
+@import "susy";
+@import "mixins";
+
+
+.page-header {
+@include background(image-url("header-inlog.png"));
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height:175px;
+  height: 175px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.page-footer {
+@include background(image-url("footer-inlog.png"));
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height:80px;
+  height: 80px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.inlog-form {
+  min-height: 45vh;
+  height: 45vh;
+  margin: 0 auto;
+}
+
+
+.layout {
+  @include container(1250px);
+  padding: 5%;
+
+
+  .subheader {
+    @extend %clearfix;
+    h1{
+      @include span(10 of 12);
+    }
+
+    aside{
+      @include span(last 2 of 12);
+    }
+  }//subheader
+
+}//layout
+

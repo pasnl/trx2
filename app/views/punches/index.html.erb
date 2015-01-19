@@ -1,0 +1,33 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Alle stempels"} %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Punch code</th>
+      <th>Category</th>
+      <th>Punch value</th>
+      <th>Program</th>
+      <th>toegevoegd</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @punches.each do |punch| %>
+      <tr>
+        <td><%= punch.punch_code %></td>
+        <td><%= punch.program.name %></td>
+        <td><%= punch.cash_value %></td>
+        <td><%= punch.program_id %></td>
+        <td><%= punch.created_at %></td>
+        <td><%= link_to 'Show', punch %></td>
+        <td><%= link_to 'Edit', edit_punch_path(punch) %></td>
+        <td><%= link_to 'Destroy', punch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Punch', new_punch_path %>

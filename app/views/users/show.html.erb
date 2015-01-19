@@ -1,0 +1,69 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Details kaarthouder"} %>
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @user.id %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @user.created_at %>
+</p>
+
+
+<p>
+  <strong>Cardnumber:</strong>
+  <%= @user.cardnumber %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @user.balance %>
+</p>
+
+<p>
+  <strong>Is Active:</strong>
+  <%= @user.is_active %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+
+<p>
+  <strong>Geboortedatum:</strong>
+  <%= @user.date_of_birth %>
+</p>
+
+<p>
+  <strong>Device_id:</strong>
+  <%= @user.device_id %>
+</p>
+
+<p>
+  <strong>Api_key</strong>
+  <%= @user.api_key %>
+</p>
+
+<p>
+  <strong>Program_id:</strong>
+  <%= @user.program_id %>
+</p>
+
+<p>
+  <strong>Balance_total</strong>
+  <%= @user.balance_total %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
+

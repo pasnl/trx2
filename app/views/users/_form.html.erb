@@ -1,0 +1,75 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <div class="field">
+      <%= f.label :id %><br>
+      <%= f.number_field :id %>
+    </div>
+
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+
+    <div class="field">
+      <%= f.label :date_of_birth %><br>
+      <%= f.datetime_select :date_of_birth %>
+    </div>
+
+    <div class="field">
+      <%= f.label :cardnumber %><br>
+      <%= f.number_field :cardnumber %>
+    </div>
+
+    <div class="field">
+      <%= f.label :is_active %><br>
+      <%= f.check_box :is_active %>
+    </div>
+
+    <div class="field">
+      <%= f.label :balance %><br>
+      <%= f.number_field :balance %>
+    </div>
+
+
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+
+    <div class="field">
+      <%= f.label :device_id %><br>
+      <%= f.number_field :device_id %>
+    </div>
+
+    <div class="field">
+      <%= f.label :api_key %><br>
+      <%= f.number_field :api_key %>
+    </div>
+
+    <div class="field">
+      <%= f.label :program_id %><br>
+      <%= f.number_field :program_id %>
+    </div>
+
+    <div class="field">
+      <%= f.label :balance_total %><br>
+      <%= f.number_field :balance_total %>
+    </div>
+
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

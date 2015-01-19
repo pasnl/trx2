@@ -1,0 +1,46 @@
+<%= render partial: '/layouts/subheader', locals: {title: "Details voucher"} %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @voucher.id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @voucher.user_id %>
+</p>
+
+<p>
+  <strong>Created:</strong>
+  <%= @voucher.created_at %>
+</p>
+
+
+<p>
+  <strong>Cash date:</strong>
+  <%= @voucher.cash_date %>
+</p>
+
+<p>
+  <strong>Cash value:</strong>
+  <%= @voucher.cash_value %>
+</p>
+
+<p>
+  <strong>Is Active:</strong>
+  <%= @voucher.is_active %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @voucher.title %>
+</p>
+
+<p>
+  <strong>Subtitle:</strong>
+  <%= @voucher.subtitle %>
+</p>
+
+<%= link_to 'Edit', edit_voucher_path(@voucher) %> |
+<%= link_to 'Back', vouchers_path %>
